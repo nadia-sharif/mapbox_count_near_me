@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melbourne 20-Minute Neighbourhood Tracker</title>
+    <link href="styles2.css" rel="stylesheet">
+
+    <!-- Official Mapbox GL JS Stylesheet -->
+    <link href="https://mapbox.com" rel="stylesheet" />
+
+    <!-- Mapbox GL JS Dependencies -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.css" rel="stylesheet">
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.14.0/mapbox-gl.js"></script>
+
+    <!-- Clean Modern Typography Architecture -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Add turf.js to highlight POI within isochrones -->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <div class="map-overlay">
+
+        <header>
+            <h1>Local Amenity Finder</h1>
+            <span class="location-tag">
+                Proximity & Travel Time Analysis
+            </span>
+        </header>
+
+        <section class="description-section">
+            <p>
+                Discover nearby services, shops, and transit options instantly. Click anywhere on the map to find
+                exactly what amenities are within your chosen walking, cycling, or driving travel limit.
+            </p>
+
+            <p class="instruction">
+                📍 Click anywhere on the map to explore nearby places.
+            </p>
+        </section>
+        <section class="filter-section search-controls-grid">
+            <div>
+                <label for="mode">Travel Mode</label>
+                <select id="mode" class="control-select" onchange="handleControlChange()">
+                    <option value="walking">🚶 Walking</option>
+                    <option value="cycling">🚲 Cycling</option>
+                    <option value="driving">🚗 Driving</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="catchment-time-select">Max Travel Time</label>
+                <select id="catchment-time-select" class="control-select" onchange="handleControlChange()">
+                    </select>
+            </div>
+        </section>
+
+        <section class="legend">
+            <div class="legend-item">
+                <div class="legend-color zone-near"></div>
+                <div class="legend-text-stack">
+                    <span id="label-5min" class="legend-title">Near Zone</span>
+                    <span id="count-5min" class="legend-counter">0 amenities</span>
+                </div>
+            </div>
+
+            <div class="legend-item">
+                <div class="legend-color zone-mid"></div>
+                <div class="legend-text-stack">
+                    <span id="label-10min" class="legend-title">Mid Zone</span>
+                    <span id="count-10min" class="legend-counter">0 amenities</span>
+                </div>
+            </div>
+
+            <div class="legend-item">
+                <div class="legend-color zone-far"></div>
+                <div class="legend-text-stack">
+                    <span id="label-20min" class="legend-title">Far Zone</span>
+                    <span id="count-20min" class="legend-counter">0 amenities</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="category-panel" class="hidden directory-section">
+            <label class="panel-section-title">Nearby Places Directory</label>
+            <div id="categories-list">
+                </div>
+        </section>
+
+        <footer>
+            <p class="datasource">
+                Powered by <strong>Mapbox GL JS</strong>, <strong>Mapbox Isochrone API</strong>, <strong>Turf.js</strong> and <strong>OpenStreetMap</strong>.
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="index3.js"></script>
+</body>
+</html>
