@@ -1,0 +1,314 @@
+/* Clean Typography & Workspace Initialization */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #3c4043;
+    background-color: #f8f9fa;
+    height: 100vh;
+    display: flex;
+}
+
+/* Map Canvas Anchor */
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Google-inspired Sidebar Panel Overlay */
+.map-overlay {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    bottom: 16px;
+    width: 380px;
+    background: #ffffff;
+    box-shadow: 0 4px 24px rgba(60, 64, 67, 0.15);
+    border-radius: 16px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Scroll Wrapper to ensure long lists scroll cleanly within the panel */
+.map-overlay > section {
+    padding: 0 20px;
+}
+
+header {
+    padding: 24px 20px 12px 20px;
+}
+
+header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a73e8;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.3px;
+}
+
+.location-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #70757a;
+    letter-spacing: 0.8px;
+}
+
+.description-section p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #5f6368;
+    margin: 0 0 12px 0;
+}
+
+.instruction {
+    font-weight: 500;
+    color: #1a73e8 !important;
+}
+
+/* Filter Selection Matrix Grid */
+.search-controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.search-controls-grid label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #5f6368;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.control-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #3c4043;
+    background-color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.control-select:focus {
+    border-color: #1a73e8;
+}
+
+/* Catchment Legend Badges */
+.legend {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8f9fa;
+    padding: 8px 10px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.zone-near { background-color: #10B981; }
+.zone-mid  { background-color: #F59E0B; }
+.zone-far  { background-color: #EF4444; }
+
+.legend-text-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.legend-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #3c4043;
+}
+
+.legend-counter {
+    font-size: 11px;
+    color: #70757a;
+}
+
+/* Analytics Card Layout */
+.analytics-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 16px !important;
+    margin: 0 20px 16px 20px;
+}
+
+.score-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #5f6368;
+    text-transform: uppercase;
+}
+
+.score-flex-row {
+    display: flex;
+    align-items: baseline;
+    margin: 8px 0;
+}
+
+#score-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #202124;
+}
+
+.score-max-value {
+    font-size: 16px;
+    color: #70757a;
+    margin-left: 2px;
+}
+
+.badge-total {
+    margin-left: auto;
+    background: #e8f0fe;
+    color: #1a73e8;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Collapsible Section Clean-ups */
+.about-score-details summary {
+    font-size: 12px;
+    color: #1a73e8;
+    cursor: pointer;
+    outline: none;
+    font-weight: 500;
+}
+
+.details-content {
+    font-size: 12px;
+    color: #5f6368;
+    line-height: 1.5;
+    padding-top: 6px;
+}
+
+/* Directory Layout and Interactive List Design */
+.directory-section {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+    padding-bottom: 12px !important;
+}
+
+.panel-section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #202124;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Horizontal Scrolling Pills Container */
+.filter-pills-container {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    scrollbar-width: none; /* Hide scrollbar for clean look */
+}
+
+.filter-pills-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Directory Listing Container */
+.directory-cards-scroll {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Google Business Card UI Component */
+.directory-card {
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.directory-card:hover {
+    background-color: #f8f9fa;
+    border-color: #bdc1c6;
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #202124;
+}
+
+.card-meta {
+    font-size: 12px;
+    color: #70757a;
+    margin-top: 3px;
+}
+
+.zone-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+/* Hidden Utility State */
+.hidden {
+    display: none !important;
+}
+
+footer {
+    margin-top: auto;
+    padding: 16px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #f1f3f4;
+}
+
+.datasource {
+    font-size: 10px;
+    color: #70757a;
+    line-height: 1.4;
+    margin: 0;
+}
+
+#categories-list {
+    max-height: 400px; /* Adjust this value based on your screen layout preference */
+    overflow-y: auto;  /* Forces the scrollbar to appear only within the accordion list area */
+    padding-right: 4px;
+}
